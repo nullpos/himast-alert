@@ -1,0 +1,26 @@
+{
+   "author": "null44",
+   "background": {
+      "persistent": false,
+      "scripts": [ "lib/jquery-2.1.4.min.js", "background.js" ]
+   },
+   "description": "ひまストアラートのChrome Extensions版です。",
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "48": "images/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "ひまストアラート on Google Chrome",
+   "options_page": "options.html",
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon19.png",
+         "38": "images/icon38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "himast alert"
+   },
+   "permissions": [ "http://himast.in/?mode=program&cat=search&sort=fan_view_cnt&st_status=0&isFan=1&rss=1", "alarms", "tabs", "storage", "notifications" ],
+   "version": "1.1.0"
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>himast alert Options</title>
+    <meta charset="UTF-8">
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+    <script src="options.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/jquery-ui.structure.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/jquery-ui.theme.min.css">
+    <style>
+        body { font-size: 15px;}
+        #rooms-tab, #snooze-tab { display: -webkit-box; }
+        #rooms .ui-selecting, #snooze-time .ui-selecting { background: #FECA40; }
+        #rooms .ui-selected, #snooze-time .ui-selected { background: #F39814; color: white; }
+        #rooms, #snooze-time { list-style-type: none; margin: 0; padding: 1em;
+            width: 40%; border-radius: 15px; background: #f0f0f0;}
+        #rooms li, #snooze-time li { margin: 5px; padding: 2px 1.5em;
+            height: 20px; background: #e5e5e5; color: #666666;}
+        #room-config, #snooze-config, #audio-config, #audio-change { list-style-type: none; margin: 50px; padding: 2em;
+            width: 40%; border-radius: 15px; background: #f0f0f0; }
+        #room-config *, #snooze-time * , #audio-change * { margin: 1em; }
+        #room-warn-multi, #snooze-warn-multi, #audio-change-complete { color: #DC143C; font-size: 17px; display: none;}
+    </style>
+</head>
+<body>
+<h1>ひまストアラート Chrome Extension版 設定ページ</h1>
+<div id="tabs">
+    <ul>
+        <li><a href="#top-tab">トップページ</a></li>
+        <li><a href="#rooms-tab">各配信ページの設定</a></li>
+        <li><a href="#snooze-tab">スヌーズ設定</a></li>
+        <li><a href="#audio-tab">サウンド設定</a></li>
+        <li><a href="#contact-tab">問い合わせ</a></li>
+    </ul>
+    <div id="top-tab">
+        <p>このページでは設定を行うことができます。</p>
+        <div id="version-text">
+            <h3>更新履歴</h3>
+        </div>
+    </div>
+    <div id="rooms-tab">
+        <div id="rooms"></div>
+        <div id="room-config">
+            <p id="room-warn-multi">※注意※ 複数の配信の設定を変更しようとしています</p>
+            <p>リストの複数選択、範囲選択ができます。</p>
+            <label>
+                <input type="checkbox" id="check-tab">
+                <span>新規タブを開く</span>
+            </label>
+            </br>
+            <label>
+                <input type="checkbox" id="check-notify">
+                <span>デスクトップ通知をする</span>
+            </label>
+            </br>
+            <label>
+                <input type="checkbox" id="check-audio">
+                <span>サウンド通知をする</span>
+            </label>
+            </br>
+            <button id="config-update-btn">更新</button>
+        </div>
+    </div>
+    <div id="snooze-tab">
+        <div id="snooze-time"></div>
+        <div id="snooze-config">
+            <p id="snooze-warn-multi">※注意※ 複数の設定を変更しようとしています</p>
+            <p>リストの複数選択、範囲選択ができます。</p>
+            <input type="text" id="time-text">
+            </br>
+            <button id="config-add-time">追加</button>
+            <button id="config-edit-time">編集</button>
+            <button id="config-delete-time">削除</button>
+        </div>
+    </div>
+    <div id="audio-tab">
+        <div id="audio-change">
+            <p>アラートに使う音声を変更する(対応している形式はmp3,wav,oggです)</p>
+            <p>ファイルサイズは3MBくらい以下でないと読み込めません。</br>できるだけ小さいサイズを推奨します。</p>
+            <p id="audio-change-complete">変更を完了しました。</p>
+            <input type="file" id="file-audio" accept="audio/mp3, audio/ogg, audio/wav"></br>
+            <button id="set-default-audio">デフォルトに戻す</button>
+        </div>
+        <div id="audio-config">
+            <p>現在のボリューム：<span id="now-volume-text"></span></p>
+            <p>スライダーの値：<span id="volume-text"></span></p>
+            <div id="volume-slider"></div></br>
+            <button id="play-audio">鳴らす</button>
+            <button id="update-audio">更新</button>
+        </div>
+    </div>
+    <div id="contact-tab">
+        <p><a href='http://twitter.com/yotsuba_anzu' target="_blank">@yotsuba_anzu</a>まで。</p>
+    </div>
+</div>
+</body>
+</html>

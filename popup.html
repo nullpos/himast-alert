@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>popup</title>
+<meta charset="UTF-8">
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="popup.js"></script>
+</head>
+<body style="min-width: 300px">
+
+<div>
+	<div>
+		<div>
+			<label>
+				<input type="checkbox" name="onoff" value="true" checked="checked" id='onoff'>
+				<span>アラートをONにする</span>
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>アラートを一定時間OFFにする</span>
+				<select name="snooze-sel">
+				</select>
+				<button id="snooze-btn">適用</button>
+			</label>
+		</div>
+		<div>
+			<button id="open-opt">オプションページを開く</button>
+		</div>
+		<div id="live_page"></div>
+	</div>
+</div>
+
+</body>
+</html>
